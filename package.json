@@ -1,0 +1,17 @@
+{
+  "name": "qcloud-apigateway",
+  "version": "0.0.1",
+  "author": "Colder",
+  "homepage": "https://github.com/vitarn/qcloud-apigateway",
+  "repository": "vitarn/qcloud-apigateway",
+  "license": "MIT",
+  "description": "[PRIVATE] Qcloud API Gateway API",
+  "keywords": [
+    "qcloud",
+    "api",
+    "API Gateway"
+  ],
+  "dependencies": {
+    "qcloudapi-sdk": "^0.1.6"
+  }
+}
