@@ -1,0 +1,35 @@
+[
+    {
+        "scope": "https://apigateway.api.qcloud.com:443",
+        "method": "POST",
+        "path": "/v2/index.php",
+        "body": "Region=gz&SecretId=x&Timestamp=1517909338&Nonce=27781&RequestClient=SDK_NODEJS_0.1.6&protocol=http%26https&serviceName=test&serviceDesc=A%20test%20service.&Action=CreateService&Signature=%2F1yoYq%2FAQgzLqnF7Ffa7yGxk9Ig%3D",
+        "status": 200,
+        "response": {
+            "code": 0,
+            "message": "",
+            "codeDesc": "Success",
+            "data": {
+                "createdTime": "2018-02-06 17:28:58",
+                "serviceName": "test",
+                "subDomain": "service-qcy1662u-1257654321.ap-guangzhou.apigateway.myqcloud.com",
+                "serviceId": "service-qcy1662u",
+                "serviceDesc": "A test service."
+            }
+        },
+        "rawHeaders": [
+            "Server",
+            "nginx",
+            "Date",
+            "Tue, 06 Feb 2018 09:28:58 GMT",
+            "Content-Type",
+            "text/html; charset=utf-8",
+            "Transfer-Encoding",
+            "chunked",
+            "Connection",
+            "close",
+            "Vary",
+            "Accept-Encoding"
+        ]
+    }
+]

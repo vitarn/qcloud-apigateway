@@ -11,7 +11,7 @@ class QcloudAPIGateway {
             throw new Error('SecretId and SecretKey is required!')
         }
 
-        this.api = new QcloudAPI({
+        this.qcloudAPI = new QcloudAPI({
             SecretId: options.SecretId,
             SecretKey: options.SecretKey,
             serviceType: 'apigateway',
@@ -21,7 +21,7 @@ class QcloudAPIGateway {
 
     request(data, opts, extra) {
         return new Promise((resolve, reject) => {
-            this.api.request(
+            this.qcloudAPI.request(
                 data,
                 opts,
                 (err, res) => {
@@ -32,20 +32,15 @@ class QcloudAPIGateway {
                         error.name = res.codeDesc
                         reject(error)
                     } else {
-                        resolve(this.response(res))
+                        delete res.code
+                        delete res.message
+                        delete res.codeDesc
+                        resolve(res)
                     }
                 },
                 extra
             )
         })
-    }
-
-    response(res) {
-        delete res.code
-        delete res.message
-        delete res.codeDesc
-
-        return res
     }
 
     /**
@@ -130,6 +125,19 @@ class QcloudAPIGateway {
     modifyService(params) {
         return this.request(Object.assign({}, params, {
             Action: 'ModifyService',
+        }))
+    }
+
+    /**
+     * @typedef {object} DeleteServiceRequest
+     * @prop {string} serviceId
+     * 
+     * @param {DeleteServiceRequest} params
+     * @return {PromiseLike<{requestId: null}>}
+     */
+    deleteService(params) {
+        return this.request(Object.assign({}, params, {
+            Action: 'DeleteService',
         }))
     }
 
@@ -325,19 +333,6 @@ class QcloudAPIGateway {
     describeServiceReleaseVersion(params) {
         return this.request(Object.assign({}, params, {
             Action: 'DescribeServiceReleaseVersion',
-        }))
-    }
-
-    /**
-     * @typedef {object} DeleteServiceRequest
-     * @prop {string} serviceId
-     * 
-     * @param {DeleteServiceRequest} params
-     * @return {PromiseLike<{requestId: null}>}
-     */
-    deleteService(params) {
-        return this.request(Object.assign({}, params, {
-            Action: 'DeleteService',
         }))
     }
 }

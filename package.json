@@ -19,10 +19,12 @@
     "qcloudapi-sdk": "^0.1.6"
   },
   "devDependencies": {
+    "@types/nock": "^9.1.2",
     "ava": "^0.25.0",
-    "sinon": "^4.2.2"
+    "nock": "^9.1.6"
   },
   "ava": {
-    "verbose": true
+    "verbose": true,
+    "serial": true
   }
 }

@@ -1,0 +1,28 @@
+[
+    {
+        "scope": "https://apigateway.api.qcloud.com:443",
+        "method": "POST",
+        "path": "/v2/index.php",
+        "body": "Region=gz&SecretId=x&Timestamp=1517907844&Nonce=17488&RequestClient=SDK_NODEJS_0.1.6&Signature=Gj7putENiUNaiK1M7IKq0NW6xEI%3D",
+        "status": 200,
+        "response": {
+            "code": 6100,
+            "message": "请求失败，参数错误:[action]",
+            "codeDesc": "ActionNotFound"
+        },
+        "rawHeaders": [
+            "Server",
+            "nginx",
+            "Date",
+            "Tue, 06 Feb 2018 09:04:04 GMT",
+            "Content-Type",
+            "text/html; charset=utf-8",
+            "Transfer-Encoding",
+            "chunked",
+            "Connection",
+            "close",
+            "Vary",
+            "Accept-Encoding"
+        ]
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "scope": "https://apigateway.api.qcloud.com:443",
+        "method": "POST",
+        "path": "/v2/index.php",
+        "body": "Region=gz&SecretId=x&Timestamp=1517911068&Nonce=5879&RequestClient=SDK_NODEJS_0.1.6&serviceId=service-qcy1662u&apiName=hello&apiDesc=A%20hello%20API.&requestConfig.method=GET&requestConfig.path=%2Fhello&serviceType=MOCK&serviceMockReturnMessage=Hello%21&Action=CreateApi&Signature=vNsdKvNEPCBWmxqhexfyr%2Fvo1YU%3D",
+        "status": 200,
+        "response": {
+            "code": 0,
+            "message": "",
+            "codeDesc": "Success",
+            "apiId": "api-n1avpll6",
+            "path": "/hello",
+            "method": "GET",
+            "createdTime": "2018-02-06 17:57:48"
+        },
+        "rawHeaders": [
+            "Server",
+            "nginx",
+            "Date",
+            "Tue, 06 Feb 2018 09:57:48 GMT",
+            "Content-Type",
+            "text/html; charset=utf-8",
+            "Transfer-Encoding",
+            "chunked",
+            "Connection",
+            "close",
+            "Vary",
+            "Accept-Encoding"
+        ]
+    }
+]
