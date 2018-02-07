@@ -1,11 +1,11 @@
 {
   "name": "qcloud-apigateway",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Colder",
   "homepage": "https://github.com/vitarn/qcloud-apigateway",
   "repository": "vitarn/qcloud-apigateway",
   "license": "MIT",
-  "description": "[PRIVATE] Qcloud API Gateway API",
+  "description": "Qcloud API Gateway API",
   "keywords": [
     "qcloud",
     "api",
@@ -14,7 +14,8 @@
   "scripts": {
     "build": "tsc",
     "test": "ava",
-    "testing": "ava -w"
+    "testing": "ava -w",
+    "release": "git release `node -e \"console.log('v'+require('./package').version)\"` -c"
   },
   "files": [
     "index.js",

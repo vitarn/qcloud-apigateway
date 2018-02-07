@@ -1,6 +1,8 @@
 # qcloud-apigateway
 
-Qcloud API Gateway api (private)
+Qcloud API Gateway api
+
+_private api spy from [qcloud web console](https://console.qcloud.com/apigateway)_
 
 `npm i qcloud-apigateway`
 

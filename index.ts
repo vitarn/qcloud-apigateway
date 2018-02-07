@@ -35,6 +35,11 @@ export class QcloudAPIGateway {
         })
     }
 
+    setRegion(region: Region) {
+        this.qcloudAPI.defaults.Region = region
+        return this
+    }
+
     request(data, opts = {}, extra = {}): Promise<any> {
         return new Promise((resolve, reject) => {
             this.qcloudAPI.request(
@@ -247,6 +252,13 @@ export type QcloudAPICallback = (err: Error, res: QcloudAPIResponse) => void
 
 export declare class QcloudAPIClass {
     constructor(options: QcloudAPIOptions)
+    defaults: {
+        protocol: 'https'
+        baseHost: 'api.qcloud.com'
+        path: '/v2/index.php'
+        method: 'POST'
+        serviceType: 'apigateway'
+    } & Options
     request(
         data: {},
         opts: {},
