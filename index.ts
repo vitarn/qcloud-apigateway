@@ -4,7 +4,7 @@ import QcloudAPI from 'qcloudapi-sdk'
  * Qcloud API Gateway API
  * 
  * @example
- * new require('qcloud-apigateway')({
+ * new QcloudAPIGateway({
  *   SecretId: 'xxx',
  *   SecretKey: 'xxx',
  *   Region: 'sh'
