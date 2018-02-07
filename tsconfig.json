@@ -2,9 +2,11 @@
     "compilerOptions": {
         "moduleResolution": "node",
         "module": "commonjs",
-        "esModuleInterop": true,
-        "skipLibCheck": true,
         "declaration": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "target": "es5",
+        "skipLibCheck": true,
         "lib": [
             "esnext"
         ]

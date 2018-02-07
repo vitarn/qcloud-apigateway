@@ -1,8 +1,8 @@
-import * as path from 'path'
-import * as fs from 'fs'
+import path from 'path'
+import fs from 'fs'
 import test from 'ava'
-import * as nock from 'nock'
-import QcloudAPIGateway from '..'
+import nock from 'nock'
+import { QcloudAPIGateway } from '..'
 
 interface NockBack extends nock.NockBack {
     (fixtureName: string, options: nock.NockBackOptions): Promise<{ nockDone, context }>
@@ -82,7 +82,7 @@ test.beforeEach(async t => {
         after: scope => {
             scope
                 .persist()
-                .filteringRequestBody((body, recordedBody) => {
+                .filteringRequestBody(((body, recordedBody) => {
                     if (typeof body !== 'string' || typeof recordedBody !== 'string') {
                         return body
                     }
@@ -99,7 +99,7 @@ test.beforeEach(async t => {
                             return pair
                         })
                         .join('&')
-                })
+                }) as any)
         },
         afterRecord: scopes => scopes.map(scope => {
             if (typeof scope.body === 'string') {
@@ -169,10 +169,6 @@ test('omit', t => {
     const pattern = { a: 11 }
 
     t.deepEqual(omit(obj, 'a', 'b'), { c: 3 })
-})
-
-test('#constructor', t => {
-    t.throws(() => new QcloudAPIGateway({}))
 })
 
 test('//request', async t => {

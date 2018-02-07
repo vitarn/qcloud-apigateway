@@ -14,7 +14,7 @@ import QcloudAPI from 'qcloudapi-sdk'
  * 
  * { totalCount: 1, serviceStatusSet: [ { serviceId: 'service-0abc0def' ... } ] }
  */
-class QcloudAPIGateway {
+export class QcloudAPIGateway {
     qcloudAPI: QcloudAPIClass
 
     constructor(options: Options) {
@@ -205,8 +205,6 @@ class QcloudAPIGateway {
         }))
     }
 }
-
-export default QcloudAPIGateway
 
 export type Diff<T extends string, U extends string> = ({[P in T]: P } & {[P in U]: never } & { [x: string]: never })[T]
 export type Omit<U, K extends keyof U> = Pick<U, Diff<keyof U, K>>
