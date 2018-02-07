@@ -12,6 +12,7 @@
     "API Gateway"
   ],
   "scripts": {
+    "build": "tsc",
     "test": "ava",
     "testing": "ava -w"
   },
