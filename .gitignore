@@ -60,4 +60,4 @@ typings/
 
 # Project
 *.js
-test/**/*.d.ts
+*.d.ts
