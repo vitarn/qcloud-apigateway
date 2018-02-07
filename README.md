@@ -26,10 +26,26 @@ ag.describeServicesStatus().then(console.log)
 
 ## API
 
-**CreateService**
-
-| name | value | desc |
-| ---  | ---   | ---  |
-| **protocol*** | `http | https | http&https` |
-| serviceName |  | Generate a random string if not set |
-| serviceDesc |
+|   | FIELD | TYPE | DESCRIPTION | REMARK |
+| - | ---   | ---  | ---         | ---    |
+|
+| **#createService** |
+|   | ***protocol** | `http | https | http&https` | |
+|   | serviceName | `string` | Service name is **NOT** unique. If leave blank server will generate a random one. | max 50, a-z, A-Z, 0-9, _ |
+|   | serviceDesc | `string` |
+|
+| **#describeServicesStatus** |
+|   | limit | `number` | | 0 - 100 |
+|   | offset | `number` | | 0 - INFINITY |
+|   | searchId | `string` | Search by service id. | Starts with `service-` |
+|   | searchName | `string` | Search by service name. | Starts with `service-` |
+| _@return_ |
+|   | totalCount | `number` |
+|   | serviceStatusSet | `[]` |
+|   | serviceStatusSet[].serviceId | `string` |
+|   | serviceStatusSet[].serviceName | `string` |
+|   | serviceStatusSet[].serviceDesc | `string` |
+|   | serviceStatusSet[].protocol | `http | https | http&https` |
+|   | serviceStatusSet[].subDomain | `string` |
+|   | serviceStatusSet[].vailableEnvironments | `[]` |
+|

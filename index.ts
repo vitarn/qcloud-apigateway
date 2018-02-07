@@ -17,7 +17,12 @@ import QcloudAPI from 'qcloudapi-sdk'
 export class QcloudAPIGateway {
     qcloudAPI: QcloudAPIClass
 
-    constructor(options: Options) {
+    constructor(
+        options: Options = {
+            SecretId: process.env.QCLOUD_SECRETID,
+            SecretKey: process.env.QCLOUD_SECRETKEY,
+        }
+    ) {
         if (!options || !options.SecretId || !options.SecretKey) {
             throw new Error('SecretId and SecretKey is required!')
         }
@@ -54,13 +59,22 @@ export class QcloudAPIGateway {
         })
     }
 
-    describeServicesStatus(params?: Pager): Promise<TotalCount & { serviceStatusSet: ServiceStatus[] }> {
+    /**
+     * List services
+     * @desc limit range [0,100]
+     * @desc searchId starts with `service-`
+     */
+    describeServicesStatus(
+        params?: Pager & { searchId?: string, searchName?: string }
+    ): Promise<TotalCount & { serviceStatusSet: ServiceStatus[] }> {
         return this.request({
             Action: 'DescribeServicesStatus',
         })
     }
 
-    describeService(params: Pick<Service, 'serviceId'>): Promise<ServiceStatus> {
+    describeService(
+        params: Pick<Service, 'serviceId'>
+    ): Promise<ServiceStatus> {
         return this.request(Object.assign({}, params, {
             Action: 'DescribeService',
         }))
