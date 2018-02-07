@@ -1,4 +1,5 @@
 # qcloud-apigateway
+
 Qcloud API Gateway api (private)
 
 `npm i qcloud-apigateway`
@@ -10,7 +11,7 @@ const ag = new QcloudAPIGateway({SecretId: 'xxx', SecretKey: 'xxx', Region: 'sh'
 ag.describeServicesStatus().then(console.log)
 
 /*
-null { totalCount: 1,
+{ totalCount: 1,
   serviceStatusSet:
    [ { serviceDesc: 'API Gateway example.',
        protocol: 'http&https',
@@ -22,3 +23,13 @@ null { totalCount: 1,
        subDomain: 'service-0abc0def-1257654321.ap-shanghai.apigateway.myqcloud.com' } ] }
 */
 ```
+
+## API
+
+**CreateService**
+
+| name | value | desc |
+| ---  | ---   | ---  |
+| **protocol*** | `http | https | http&https` |
+| serviceName |  | Generate a random string if not set |
+| serviceDesc |
