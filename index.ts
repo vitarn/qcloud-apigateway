@@ -65,9 +65,10 @@ export class QcloudAPIGateway {
     }
 
     /**
-     * List services
+     * List or search services
      * @desc limit range [0,100]
-     * @desc searchId starts with `service-`
+     * @desc searchId is serviceId starts with `service-`
+     * @desc searchName is serviceName
      */
     describeServicesStatus(
         params?: Pager & { searchId?: string, searchName?: string }
@@ -94,11 +95,6 @@ export class QcloudAPIGateway {
             .then(res => res.data)
     }
 
-    /**
-     * @param {ServiceId & ServiceForm} params
-     * @return {PromiseLike<ServiceId & ServiceForm & {modifiedTime: string}>}
-     */
-
     modifyService(
         params: Pick<Service, 'serviceId'> & Partial<Pick<Service, 'serviceName' | 'serviceDesc' | 'protocol'>>
     ): Promise<Pick<Service, 'serviceId' | 'serviceName' | 'serviceDesc' | 'protocol' | 'modifiedTime'>> {
@@ -107,10 +103,6 @@ export class QcloudAPIGateway {
         }))
     }
 
-    /**
-     * @param {ServiceId} params
-     * @return {PromiseLike<{requestId: null}>}
-     */
     deleteService(
         params: Pick<Service, 'serviceId'>
     ): Promise<{ requestId: null }> {
@@ -120,11 +112,13 @@ export class QcloudAPIGateway {
     }
 
     /**
-     * @param {ServiceId & Pager} params
-     * @return {PromiseLike<List & {apiIdStatusSet: [ApiStatus]}>}
+     * List or search apis
+     * @desc searchId starts with `service-`
+     * @desc limit range [0,100]
+     * @desc searchName is url path `/path`
      */
     describeApisStatus(
-        params: Pick<Service, 'serviceId'> & Pager
+        params: Pick<Service, 'serviceId'> & Pager & { searchName?: string }
     ): Promise<TotalCount & { apiIdStatusSet: ApiStatus[] }> {
         return this.request(Object.assign({}, params, {
             Action: 'DescribeApisStatus',
@@ -156,6 +150,21 @@ export class QcloudAPIGateway {
         }))
     }
 
+    runApi(
+        params: Pick<Api, 'serviceId' | 'apiId'> & {
+            contentType: 'application/x-www-form-urlencoded' | 'application/json'
+        }
+    ): Promise<{
+        returnCode: number
+        returnHeader: string
+        returnBody: string
+        delay: number
+    }> {
+        return this.request(Object.assign({}, params, {
+            Action: 'RunApi',
+        }))
+    }
+
     deleteApi(
         params: Pick<Api, 'apiId' | 'serviceId'>
     ): Promise<{}> {
@@ -165,7 +174,7 @@ export class QcloudAPIGateway {
     }
 
     releaseService(
-        params: Omit<ServiceRelease, | 'releaseTime'>
+        params: Omit<ServiceRelease, 'releaseTime'>
     ): Promise<Pick<ServiceRelease, 'releaseDesc' | 'releaseTime'>> {
         return this.request(Object.assign({}, params, {
             Action: 'ReleaseService',
@@ -204,10 +213,6 @@ export class QcloudAPIGateway {
         }))
     }
 
-    /**
-     * @param {UsagePlanId} params
-     * @return {PromiseLike<UsagePlanStatus & UsagePlanBind>}
-     */
     describeUsagePlan(
         params: Pick<UsagePlan, 'usagePlanId'>
     ): Promise<UsagePlanBind> {
@@ -326,7 +331,7 @@ export interface Api extends ApiRequestConfig, Timestamps, Pick<Service, 'servic
     responseType: 'HTML' | 'JSON' | 'TEST' | 'BINARY' | 'XML'
     responseSuccessExample: string
     responseFailExample: string
-    responseErrorCodes: ApiResponseErrorCode
+    responseErrorCodes: ApiResponseErrorCode[]
     serviceMockReturnMessage: string
 }
 export type ApiStatus = Pick<Api, 'apiId' | 'serviceId' | keyof ApiRequestConfig | keyof Timestamps>
