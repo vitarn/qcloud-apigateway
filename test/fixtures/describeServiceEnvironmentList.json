@@ -1,0 +1,49 @@
+[
+    {
+        "scope": "https://apigateway.api.qcloud.com:443",
+        "method": "POST",
+        "path": "/v2/index.php",
+        "body": "Region=gz&SecretId=x&Timestamp=1517925577&Nonce=64028&RequestClient=SDK_NODEJS_0.1.6&serviceId=service-qcy1662u&Action=DescribeServiceEnvironmentList&Signature=oUKiVMJz76laz8eEJY5kDdK3IqU%3D",
+        "status": 200,
+        "response": {
+            "code": 0,
+            "message": "",
+            "codeDesc": "Success",
+            "totalCount": 3,
+            "environmentList": [
+                {
+                    "url": "service-qcy1662u-1257654321.ap-guangzhou.apigateway.myqcloud.com/test",
+                    "environmentName": "test",
+                    "status": 1,
+                    "versionName": "20180206215503e169e004-7be3-46fa-aea4-5a51fef7630d"
+                },
+                {
+                    "url": "service-qcy1662u-1257654321.ap-guangzhou.apigateway.myqcloud.com/prepub",
+                    "environmentName": "prepub",
+                    "status": 0,
+                    "versionName": ""
+                },
+                {
+                    "url": "service-qcy1662u-1257654321.ap-guangzhou.apigateway.myqcloud.com/release",
+                    "environmentName": "release",
+                    "status": 0,
+                    "versionName": ""
+                }
+            ]
+        },
+        "rawHeaders": [
+            "Server",
+            "nginx",
+            "Date",
+            "Tue, 06 Feb 2018 13:59:37 GMT",
+            "Content-Type",
+            "text/html; charset=utf-8",
+            "Transfer-Encoding",
+            "chunked",
+            "Connection",
+            "close",
+            "Vary",
+            "Accept-Encoding"
+        ]
+    }
+]

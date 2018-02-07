@@ -1,0 +1,30 @@
+[
+    {
+        "scope": "https://apigateway.api.qcloud.com:443",
+        "method": "POST",
+        "path": "/v2/index.php",
+        "body": "Region=gz&SecretId=x&Timestamp=1517925303&Nonce=60267&RequestClient=SDK_NODEJS_0.1.6&serviceId=service-qcy1662u&releaseDesc=test&environmentName=test&Action=ReleaseService&Signature=ijrLAqcJKn35OftkN36b3B6cJ%2BI%3D",
+        "status": 200,
+        "response": {
+            "code": 0,
+            "message": "",
+            "codeDesc": "Success",
+            "releaseTime": "20180206215503e169e004-7be3-46fa-aea4-5a51fef7630d",
+            "releaseDesc": "test"
+        },
+        "rawHeaders": [
+            "Server",
+            "nginx",
+            "Date",
+            "Tue, 06 Feb 2018 13:55:04 GMT",
+            "Content-Type",
+            "text/html; charset=utf-8",
+            "Transfer-Encoding",
+            "chunked",
+            "Connection",
+            "close",
+            "Vary",
+            "Accept-Encoding"
+        ]
+    }
+]

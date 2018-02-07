@@ -1,0 +1,38 @@
+[
+    {
+        "scope": "https://apigateway.api.qcloud.com:443",
+        "method": "POST",
+        "path": "/v2/index.php",
+        "body": "Region=gz&SecretId=x&Timestamp=1517928030&Nonce=64637&RequestClient=SDK_NODEJS_0.1.6&usagePlanId=usagePlan-hhm84pad&Action=DescribeUsagePlan&Signature=SsqMgBSYIQMGTZgVaXWPSIsqXoU%3D",
+        "status": 200,
+        "response": {
+            "code": 0,
+            "message": "",
+            "codeDesc": "Success",
+            "usagePlanId": "usagePlan-hhm84pad",
+            "usagePlanName": "test",
+            "usagePlanDesc": "test",
+            "maxRequestNumPreSec": 1,
+            "createdTime": "2018-02-06 22:27:36",
+            "modifiedTime": "2018-02-06 22:27:36",
+            "bindSecretIdTotalCount": 0,
+            "bindSecretIds": [],
+            "bindEnvironmentTotalCount": 0,
+            "bindEnvironments": []
+        },
+        "rawHeaders": [
+            "Server",
+            "nginx",
+            "Date",
+            "Tue, 06 Feb 2018 14:40:30 GMT",
+            "Content-Type",
+            "text/html; charset=utf-8",
+            "Transfer-Encoding",
+            "chunked",
+            "Connection",
+            "close",
+            "Vary",
+            "Accept-Encoding"
+        ]
+    }
+]

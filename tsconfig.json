@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "node",
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "declaration": true,
+        "lib": [
+            "esnext"
+        ]
+    },
+    "include": [
+        "**/*.ts"
+    ],    
+    "exclude": [
+        "node_modules"
+    ],
+    "compileOnSave": true
+}

@@ -1,0 +1,49 @@
+[
+    {
+        "scope": "https://apigateway.api.qcloud.com:443",
+        "method": "POST",
+        "path": "/v2/index.php",
+        "body": "Region=gz&SecretId=x&Timestamp=1517919406&Nonce=33830&RequestClient=SDK_NODEJS_0.1.6&serviceId=service-qcy1662u&apiId=api-n1avpll6&Action=DescribeApi&Signature=4IIb8thHPkgBPxv3KUj6bqtFspk%3D",
+        "status": 200,
+        "response": {
+            "code": 0,
+            "message": "",
+            "codeDesc": "Success",
+            "serviceId": "service-qcy1662u",
+            "serviceName": "test",
+            "serviceDesc": "A test service.",
+            "apiId": "api-n1avpll6",
+            "apiName": "hello",
+            "apiDesc": "A hello API.",
+            "createdTime": "2018-02-06 17:57:48",
+            "modifiedTime": "2018-02-06 17:57:48",
+            "requestConfig": {
+                "path": "/hello",
+                "method": "GET"
+            },
+            "requestParameters": [],
+            "serviceType": "MOCK",
+            "serviceTimeout": 30,
+            "authRequired": "TRUE",
+            "serviceMockReturnMessage": "Hello!",
+            "responseType": "",
+            "responseSuccessExample": "",
+            "responseFailExample": "",
+            "responseErrorCodes": []
+        },
+        "rawHeaders": [
+            "Server",
+            "nginx",
+            "Date",
+            "Tue, 06 Feb 2018 12:16:46 GMT",
+            "Content-Type",
+            "text/html; charset=utf-8",
+            "Transfer-Encoding",
+            "chunked",
+            "Connection",
+            "close",
+            "Vary",
+            "Accept-Encoding"
+        ]
+    }
+]

@@ -15,16 +15,24 @@
     "test": "ava",
     "testing": "ava -w"
   },
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
   "dependencies": {
     "qcloudapi-sdk": "^0.1.6"
   },
   "devDependencies": {
     "@types/nock": "^9.1.2",
     "ava": "^0.25.0",
-    "nock": "^9.1.6"
+    "nock": "^9.1.6",
+    "typescript": "^2.7.1"
   },
   "ava": {
     "verbose": true,
-    "serial": true
+    "serial": true,
+    "source": [
+      "index.js"
+    ]
   }
 }
