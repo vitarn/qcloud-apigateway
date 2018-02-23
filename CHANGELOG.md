@@ -1,4 +1,12 @@
 
+v0.0.7 / 2018-02-24
+===================
+
+  * Ignore params check
+  * Fix readme
+  * travis only master and tag with prefix `v`
+  * Dont deploy npm next
+
 v0.0.6 / 2018-02-24
 ===================
 
