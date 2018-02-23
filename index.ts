@@ -23,8 +23,8 @@ export class QcloudAPIGateway {
             SecretKey: process.env.QCLOUD_SECRETKEY,
         }
     ) {
-        if (!options || !options.SecretId || !options.SecretKey) {
-            throw new Error('SecretId and SecretKey is required!')
+        if (!options.SecretId || !options.SecretKey) {
+            console.warn('SecretId and SecretKey is required!')
         }
 
         this.qcloudAPI = new QcloudAPI({

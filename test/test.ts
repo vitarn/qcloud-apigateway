@@ -10,7 +10,7 @@ interface NockBack extends nock.NockBack {
 
 const pick = (obj = {}, ...keys) => keys.reduce((prev, key) => Object.assign(prev, { [key]: obj[key] }), {})
 const pickObj = (obj = {}, pattern = {}) => pick(obj, ...Object.keys(pattern))
-const omit = (obj = {}, ...keys) => Object.keys(obj).reduce((prev, key) => keys.includes(key) ? prev : Object.assign(prev, { [key]: obj[key] }), {})
+const omit = (obj = {}, ...keys) => Object.keys(obj).reduce((prev, key) => ~keys.indexOf(key) ? prev : Object.assign(prev, { [key]: obj[key] }), {})
 
 nock.back.fixtures = path.join(__dirname, 'fixtures')
 nock.back.setMode('record')
@@ -149,6 +149,10 @@ test.afterEach.always(t => {
 test.after.always(t => {
     nock.cleanAll()
     nock.restore()
+})
+
+test('constructor', t => {
+    t.notThrows(() => new QcloudAPIGateway({} as any))
 })
 
 test('pick', t => {
