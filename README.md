@@ -34,12 +34,10 @@ ag.describeServicesStatus().then(console.log)
 
 |   | FIELD | TYPE | DESCRIPTION | REMARK |
 | - | ---   | ---  | ---         | ---    |
-|
 | **#createService** |
 |   | ***protocol** | `http | https | http&https` | |
 |   | serviceName | `string` | Service name is **NOT** unique. If leave blank server will generate a random one. | max 50, a-z, A-Z, 0-9, _ |
 |   | serviceDesc | `string` |
-|
 | **#describeServicesStatus** |
 |   | limit | `number` | | 0 - 100 |
 |   | offset | `number` | | 0 - INFINITY |
@@ -54,4 +52,3 @@ ag.describeServicesStatus().then(console.log)
 |   | serviceStatusSet[].protocol | `http | https | http&https` |
 |   | serviceStatusSet[].subDomain | `string` |
 |   | serviceStatusSet[].vailableEnvironments | `[]` |
-|
