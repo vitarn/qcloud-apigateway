@@ -1,15 +1,21 @@
 language: node_js
 node_js:
-  - node
-  - 8
-  - 6
-  - 4
-
+- node
+- 8
+- 6
+- 4
 branches:
   only:
-    - master
-
+  - master
 cache: yarn
-
 notifications:
   email: false
+deploy:
+  provider: npm
+  email:
+    secure: JQhTtgqxwKt4Ov9+kcuIIHBta3I5PI/CmZClsqGo155noJSSNkyQtz0nnYDFUt3/vZqu39jVqH3c4ZTEWXDPo6STy6bL1ebO0F0X+WBa3skrsNLDA404XZv3I668IqX3wZkwNo/z1kh/xkULi2mzWFQIFOzK7c/TQedCGA3svylHE4aX36FGFxrUtjhqFVhYvEZgV9RhR2b8w8C6J/B+nqqrOxbPt04YHVk1JAOxxxRa6egIJbyp0ZBjw/s4BYc8eUvhhxxxiwA2GXJhhIdN6nJgKhJsJZKQrtfuZ9j8Ithgq03cfpjwJX1VbEt1Qp/hP3k08voh/iRvncF78704OShybw7oyz9Y63L8kkcKegj32lW71gQVAIQKMPbbVVG1M+Rf3JTsZRTg14TQDXrmlEI27rmnStITy5jcAvn8zRy7l+dhCr83QhL+Up6GiP0KE5xif1YLaivS/8RthCFtNViIRnu8jasw9KD5Tq1Gx102HOVxH1cBl3KMGDl4bStY+LPFrVCMVOXAX76uI6ZzZkUnIgfSX3iO6zcfGwdYdDnHM+a6NieyJQ4c2+tivN/IpCPedKf5Oo/yoYnvUcmErNt1yUo8MHeJRinn70YcFKrvWMdZGIAcbk0NTtnLacuJVVVxLgnUK+XPW+94QEqBi8bTaYh86bOruojCA7JS888=
+  api_key:
+    secure: NnXaVwZeiuuHUDCehiioGjKE5KL3eNlCBtsNhQO/POjmQMfg3yfXu/znOkr6FM+MO0tpR85vseYbw7XYVOWjVlcAl6R+X3V84JcDC3/GpB/ftoJiENCZauKXcwRWgaJXXcXQdIYuIl7ks4nFKASx29UlvZuFfqkz0ve8O7E7Qq9nccQ0sZgX0jl5RdYoxrTsWG07gHtnAq8IUwLx86pFCjzpr3XL7bfgNIiqzUsjdk3oYLOFqZ+az3Cpc9c98Iqhtbpnp/cFRHSdlaBEwww5XVUr9NHsEOqbDn8Gc1PzFa5iKflkFpF0xhvgpvedwtVtw5k2o2Ssgck/mAlvvn5P3vippLYDpAL2k+rXuvzW29QIxcnVOjd4DoMU9aojyZ0Vx/JPVWJav2oqdPPKr08e9RY+SrmH6UdFcECPwi2VhCutCbx1x8bEJWd7MO5ViT1t9pnBGfGmrQx7jLxBlnraEq0baX5iOmNUULIHiAI5XLEhOgSOg933bvXFoKRsoG2PuiQu8Vcj4A1EwEb31jAj+8DalB/mlrE/mGKDxPPX3vgH8gDEw4lp2yDfRaRHM8DAcohcMA+Bxzdy+vC/veMjJDUwMe/dHcJDeluYolqKA8mA4L3d6BEowd9AS6xVVxB4gRkawTmWMmWFKSmlCx2P2eKgSUGbqtstpy7zv+8qzYU=
+  on:
+    tags: true
+    repo: vitarn/qcloud-apigateway
