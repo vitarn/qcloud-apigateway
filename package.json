@@ -12,7 +12,7 @@
     "API Gateway"
   ],
   "scripts": {
-    "build": "tsc",
+    "prepare": "tsc",
     "test": "ava",
     "testing": "ava -w",
     "release": "git release `node -e \"console.log('v'+require('./package').version)\"` -c"

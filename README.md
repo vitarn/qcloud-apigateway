@@ -2,7 +2,11 @@
 
 Qcloud API Gateway api
 
-_private api spy from [qcloud web console](https://console.qcloud.com/apigateway)_
+_Undocumented api spy from [qcloud web console](https://console.qcloud.com/apigateway)_
+
+[![Build Status](https://travis-ci.org/vitarn/qcloud-apigateway.svg?branch=master)](https://travis-ci.org/vitarn/qcloud-apigateway)
+
+## Usage
 
 `npm i qcloud-apigateway`
 
