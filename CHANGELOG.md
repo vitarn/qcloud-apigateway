@@ -1,4 +1,12 @@
 
+v0.0.5 / 2018-02-24
+===================
+
+  * Fix travis node4
+  * Travis matrix
+  * Add test ensure constructor not throw
+  * Dont throw error in constructor
+
 v0.0.4 / 2018-02-24
 ===================
 
