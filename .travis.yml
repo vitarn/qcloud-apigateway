@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - node
+
+branches:
+  only:
+    - master
+
+cache: yarn
+
+before_script:
+  - yarn build
+
+notifications:
+  email: false

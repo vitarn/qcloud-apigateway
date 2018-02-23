@@ -2,7 +2,7 @@
 
 Qcloud API Gateway api
 
-_private api spy from [qcloud web console](https://console.qcloud.com/apigateway)_
+_Undocumented api spy from [qcloud web console](https://console.qcloud.com/apigateway)_
 
 `npm i qcloud-apigateway`
 
