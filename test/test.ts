@@ -151,6 +151,10 @@ test.after.always(t => {
     nock.restore()
 })
 
+test('constructor', t => {
+    t.notThrows(() => new QcloudAPIGateway({} as any))
+})
+
 test('pick', t => {
     const obj = { a: 1, b: 2, c: 3 }
 
