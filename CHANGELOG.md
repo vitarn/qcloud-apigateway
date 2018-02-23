@@ -2,6 +2,7 @@
 v0.0.6 / 2018-02-24
 ===================
 
+  * Fix travis deploy
   * Publish npm by travis
 
 v0.0.5 / 2018-02-24
