@@ -5,6 +5,10 @@ node_js:
 - 6
 - 4
 cache: yarn
+branches:
+  only:
+  - master
+  - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
 notifications:
   email: false
 deploy:
