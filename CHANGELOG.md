@@ -1,4 +1,14 @@
 
+v0.0.4 / 2018-02-24
+===================
+
+  1. Support new API: `runApi`
+
+  * Add travis status into readme
+  * Use npm script prepare
+  * Add travis
+  * Add runApi
+
 v0.0.3 / 2018-02-07
 ===================
 
