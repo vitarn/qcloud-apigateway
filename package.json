@@ -28,7 +28,7 @@
     "@types/nock": "^9.1.2",
     "ava": "^0.25.0",
     "nock": "^9.1.6",
-    "typescript": "^2.7.1"
+    "typescript": "^2.7.2"
   },
   "ava": {
     "verbose": true,
