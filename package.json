@@ -12,10 +12,11 @@
     "API Gateway"
   ],
   "scripts": {
-    "prepare": "tsc",
+    "build": "tsc",
     "test": "ava",
     "testing": "ava -w",
-    "release": "git release `node -e \"console.log('v'+require('./package').version)\"` -c"
+    "release": "git release `node -e \"console.log('v'+require('./package').version)\"` -c",
+    "prepack": "tsc --removeComments --inlineSourceMap false"
   },
   "files": [
     "index.js",
