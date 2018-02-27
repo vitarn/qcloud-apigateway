@@ -20,7 +20,12 @@ script:
 
 after_success:
   - npx nyc report --reporter=lcov && npx codecov
-  
+
+stages:
+  - test
+  - name: deploy
+    if: tag IS present
+
 jobs:
   include:
     - stage: deploy
