@@ -1,5 +1,7 @@
 # qcloud-apigateway
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/vitarn/qcloud-apigateway.svg)](https://greenkeeper.io/)
+
 Qcloud API Gateway api
 
 _Undocumented apis spy from [qcloud web console](https://console.qcloud.com/apigateway)_
