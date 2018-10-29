@@ -23,7 +23,7 @@
     "index.d.ts"
   ],
   "dependencies": {
-    "qcloudapi-sdk": "^0.1.6"
+    "qcloudapi-sdk": "^0.2.1"
   },
   "devDependencies": {
     "@types/nock": "^9.1.2",
